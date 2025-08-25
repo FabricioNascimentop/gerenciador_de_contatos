@@ -67,6 +67,7 @@ def register_routes(app):
                 path="/"
             )
 
+
             session["user_id"] = usuario.id
             session["user_email"] = usuario.email
 
