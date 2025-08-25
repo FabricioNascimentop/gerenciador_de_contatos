@@ -1,0 +1,254 @@
+@use '_consts';
+
+.bgOpaco{
+    position: fixed;
+    width: 100vw;
+    height: 100vw;
+    backdrop-filter: blur(5px); 
+    .fechar{
+        color: consts.$content-primary;
+        font-size: 54px;
+        font-weight: 600;
+        text-align: center;
+        width: 45px;
+        margin-left: auto;
+        font-family: 'Courier New', Courier, monospace;
+        &:hover{
+            cursor: pointer;
+        }
+    }
+}
+.ConfigContain{
+    @include consts.modalContain;
+}
+.logoutContain, .apagarContain{
+    @include consts.modalContain;
+    > div{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 1.5rem;
+        margin-top: 25px;
+        
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .sim{
+        width: 120px;
+        padding: 15px 10px;
+        border: solid consts.$border-primary 3px;
+        border-radius: 5px;
+    }
+    .nao{
+        width: 120px;
+        padding: 15px 10px;
+        border: solid consts.$border-primary 3px;
+        border-radius: 5px;
+    }
+}
+.editarContain,
+.adicionarContainer {
+  @include consts.modalContain;
+  height: auto;
+  text-align: left;
+  margin-top: 0px; // estava só no adicionar, agora vale pros dois
+
+  .label-input {
+    margin: 10px 0px;
+  }
+
+  label {
+    text-align: left;
+  }
+
+  input[type="submit"] {
+    width: 120px;
+    height: 35px;
+    border-radius: 8px;
+    background-color: consts.$accent-primary;
+    color: consts.$background-primary;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: calc(50% - 60px);
+    
+    &:hover {
+      background-color: lighten(consts.$accent-primary, 10%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  }
+
+  img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .insertImage {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .previewImage {
+      display: flex;
+      justify-content: center;
+    }
+
+    .defaultPreviewImage {
+      background-color: consts.$background-secondary;
+      padding: 20px;
+      border-radius: 10px;
+      width: 50px;
+      margin: auto;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08),
+                  0 2px 4px rgba(0, 0, 0, 0.06),
+                  inset 0 1px 2px rgba(255, 255, 255, 0.15);
+
+      svg {
+        transform: scale(1.35);
+      }
+    }
+
+    label {
+      border: solid consts.$border-primary 2.5px;
+      padding: 10px;
+      border-radius: 8px;
+      width: 150px;
+      margin: auto;
+      text-align: center;
+    }
+  }
+}
+
+
+.tecnologiasContainer{
+    display: flex;
+    width: 500px;
+    overflow: hidden;
+    gap: 25px;
+
+    .tecnologiasContent{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: consts.$background-secondary;
+        padding: 10px;
+        border-radius: 25px;
+        h4{
+            color: consts.$content-primary;
+            font-size: 1.25rem;
+        }
+    }
+
+}
+
+.guardIcon{
+    display: flex;
+    align-items: center;
+    width: 115px;
+    justify-content: space-between;
+    padding: 10px;
+    margin: 30px 0px 0px 35px;
+        span{
+            font-size: 22px;
+            color: consts.$content-primary;
+            font-family: consts.$font-primary;
+            font-weight: 600;
+    }
+}
+
+.label-input{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+    label{
+        font-family: consts.$font-primary;
+        color: consts.$content-primary;
+        font-weight: 600;
+    }
+    input{
+        background-color: consts.$background-secondary;
+        border: 1.75px solid transparentize(darken(consts.$content-body, 40%), 0.25);
+        border-radius: 8px;
+        height: 30px;
+        padding: 2px 10px;
+        margin-top: 5px;
+        caret-color: consts.$accent-primary;
+        font: 16px consts.$font-primary;
+        color: consts.$content-body;
+    }
+    p.error{
+        color: #fff;
+        margin: 10px;
+        font-size: 0.75rem;
+    }
+}
+
+input.search{
+    background-color: consts.$background-secondary;
+    border: 1.75px solid transparentize(darken(consts.$content-body, 40%), 0.25);
+    border-radius: 8px;
+    height: 35px;
+    padding: 2px 10px;
+    margin-top: 5px;
+    caret-color: consts.$accent-primary;
+    font: 16px consts.$font-primary;
+    color: consts.$content-body;
+}
+
+div.contato{
+    height: 75px;
+    display: flex;
+    align-items: center;
+    color: consts.$content-body;
+    justify-content: space-around;
+    font-size: 1.5rem;
+    width: 95%;
+    margin: 10px auto;
+
+    div{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    div.email, div.telefone{
+        font-size: 1.25rem;
+    }
+
+    .nome-tag{
+        flex-direction: column;
+        height: 100%;
+        margin-left: 25px;
+
+            span.tag{
+                font-size: 1.25rem;
+            }
+    }
+    .telefone{
+        width: 50%;
+    }
+    .buttons{
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        > div{
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+        .editar{
+            border: solid consts.$border-primary 3px;
+        }
+
+    }
+}

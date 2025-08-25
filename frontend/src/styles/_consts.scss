@@ -1,0 +1,39 @@
+@use 'sass:color';
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap');
+
+$font-primary: "Schibsted Grotesk", sans-serif;
+
+
+//mixins
+@mixin modalContain{
+    background-color: color.scale($background-primary, $alpha: -10%);
+    width: 350px;
+    height: 350px;
+    margin: 40px auto;
+    border-radius: 15px;
+    padding: 50px;
+    color: $content-primary;
+    font-size: 1.25rem;
+    text-align: center;
+    font-family: $font-primary;
+}
+
+
+//cores
+
+//cores elementos
+$content-primary: #FFF;
+$content-body: #E2E2E2;
+$content-heading:#C6C6C6;
+$content-muted: #5E5E5E;
+$content-placeholder: #777777;
+$content-inverse: #111111;
+//cores background
+$background-primary: #111111;
+$background-secondary:#1B1B1B;
+$background-tertiary: #303030;
+//detalhes
+$accent-primary: #C4F120;
+$accent-secondary: #E61E32;
+//borda
+$border-primary: #303030;

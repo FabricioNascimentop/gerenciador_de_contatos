@@ -1,0 +1,318 @@
+@use '_consts';
+@use 'components';
+@use "sass:color";
+
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background: radial-gradient(
+    circle at center,
+    consts.$background-primary 100%,
+    consts.$background-secondary 45%,
+    consts.$background-tertiary 10%
+  );
+}
+
+
+//home
+.hero{
+    display: flex;
+    height: 100vh;
+    font-family: consts.$font-primary;
+
+    .dir{
+        width: 50%;
+        display: flex;
+        align-items: center;
+    }
+    .esq {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10%;
+        height: 100%;
+
+        h1{
+            font-size: 64px;
+            line-height: 64px;
+            margin-top: 25px;
+            color: consts.$content-primary;
+            letter-spacing: 2px;
+            font-weight: 500;
+        }
+        h2{
+            color: consts.$background-tertiary;
+        }
+    }
+}
+
+.button_home{
+    background-color: consts.$accent-primary;
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+    border-radius: 12px;
+    margin: auto;
+    margin-top: -75px;
+        a{
+        text-decoration: none;
+        font-size: 36px;
+        font-family: consts.$font-primary;
+        color: consts.$content-inverse;
+        font-weight: 600;
+        letter-spacing: 1.25px;
+    }
+        &:hover {
+        background-color: darken(consts.$accent-primary, 20%);
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+        transition: 0.2s;
+        a{
+            color: color.scale(consts.$accent-primary, $lightness: 21.5189873418%);
+        }
+    }
+        &:active {
+            transform: scale(0.97); 
+        }
+
+}
+
+
+
+//cadastro e login
+main.contasManager{
+    display: flex;
+    font-family: consts.$font-primary;
+        .espaço{
+            width: 66%;
+        }
+
+        .quadroConta{
+            background-color: consts.$background-primary;
+            min-height: 100vh;
+            width: 34%;
+
+            .contaContainer{
+                width: 66%;
+                height: 75%;
+                margin: 25% auto;
+
+                .contaSwapper{
+                    color: #e2e2e2;
+                    font-weight: 600;
+                    font-size: 0.75rem;
+                    text-align: right;
+
+                    a{
+                        text-decoration: none;
+                        color: consts.$accent-primary
+                    }
+                    
+                }
+            
+                .formConta{
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 30%;
+
+                    h2{
+                        color: consts.$content-body;
+                        font-size: 24px;
+                        line-height: 32px;
+                    }
+
+                    input[type="submit"] {
+                        width: 120px;
+                        height: 35px;
+                        border-radius: 8px;
+                        background-color: consts.$accent-primary;
+                        color: consts.$background-primary;
+                        font-size: 0.9rem;
+                        font-weight: 500;
+                        border: none;
+                        cursor: pointer;
+                        transition: all 0.3s ease;
+                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+                        &:hover {
+                            background-color: lighten(consts.$accent-primary, 10%);
+                            transform: translateY(-2px);
+                            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+                        }
+
+                        &:active {
+                            transform: translateY(0);
+                            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                        }
+                    }
+                }
+            }
+        }
+        
+    }
+    
+
+//dashboard
+main.dashboard{
+    display: flex;
+}
+.lateral{
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        width: 15%;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 35px;
+
+            .buttons{
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                    svg{
+                        background-color: consts.$background-tertiary;
+                        padding: 5px;
+                        border-radius: 15px;
+                        &:hover{
+                            cursor: pointer;
+                            fill: consts.$accent-primary;
+                            transition: 0.25s ease-in-out;
+                        }
+                    }
+            }
+
+            .info{
+                margin-left: 15px;
+                color: consts.$content-heading;
+                font: 14px consts.$font-primary;
+
+                    span{
+                        font-size: 10px;
+                        color: consts.$content-body;
+                    }
+            }
+}
+
+
+.dashboard{
+        width: 100%;
+        height: 100%;
+}
+.dashboardContent{
+    width: 90%;
+    height: 90%;
+    margin: 35px auto;
+    background-color: consts.$background-secondary;
+    padding: 25px;
+    border-radius: 25px;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+        h2{
+            color: consts.$content-primary;
+            font-family: consts.$font-primary;
+            font-size: 1.5rem;
+        }
+
+    .headerDir{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        
+        .addContatos{
+            background-color:  consts.$background-tertiary;
+            padding: 10px;
+            border-radius: 10px;
+            font-family: consts.$font-primary;
+            font-weight: 500;
+            font-size: 1.15rem;
+            color: white;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        svg{
+            background-color: consts.$background-tertiary;
+            padding: 10px;
+            border-radius: 15px;
+            color: white;
+            &:hover {
+                cursor: pointer;
+                fill: consts.$accent-primary; 
+                transform: scale(1.15);
+
+            }
+        }
+    }
+}
+
+
+
+.dashboardMain{
+    display: flex;
+
+    .selector{
+        display: flex;
+        flex-direction: column;
+        background-color: consts.$accent-primary;
+        min-width: 35px;
+        align-items: center;
+        gap: 5px;
+        border-radius: 20px;
+        padding: 10px 0px;
+        max-height: 666px;
+        justify-content: space-evenly;
+        
+            span{
+                font-family: consts.$font-primary;
+                font-size: 16px;
+                font-weight: 600;
+    
+                &:hover{
+                    cursor: pointer;
+                    transform: scale(1.5);
+                    font-size: 24px;
+                    transition: 0.2s;
+                }
+        }
+    }
+    .dashboardMainContent{
+        width: 100%;
+        padding: 15px;
+
+            span.letraSelector{
+                font-size: 32px;
+                color: white;
+                font-weight: 600;
+            }
+            div.grid{
+                font-size: 26px;
+                margin-top: 10px;
+                display: flex;
+                color: white;
+                .nome{
+                    width: 307px;
+                    text-align: center;
+                }
+                .telefone{
+                    text-align: center;
+                    width: 154px;
+                }
+                .email{
+                        width: 220px;
+                        text-align: center;
+                }
+            }
+    }
+}
+
+

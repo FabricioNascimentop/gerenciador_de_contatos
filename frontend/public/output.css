@@ -1,0 +1,551 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap");
+.bgOpaco {
+  position: fixed;
+  width: 100vw;
+  height: 100vw;
+  backdrop-filter: blur(5px);
+}
+.bgOpaco .fechar {
+  color: #FFF;
+  font-size: 54px;
+  font-weight: 600;
+  text-align: center;
+  width: 45px;
+  margin-left: auto;
+  font-family: "Courier New", Courier, monospace;
+}
+.bgOpaco .fechar:hover {
+  cursor: pointer;
+}
+
+.ConfigContain {
+  background-color: rgba(17, 17, 17, 0.9);
+  width: 350px;
+  height: 350px;
+  margin: 40px auto;
+  border-radius: 15px;
+  padding: 50px;
+  color: #FFF;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+
+.logoutContain, .apagarContain {
+  background-color: rgba(17, 17, 17, 0.9);
+  width: 350px;
+  height: 350px;
+  margin: 40px auto;
+  border-radius: 15px;
+  padding: 50px;
+  color: #FFF;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+.logoutContain > div, .apagarContain > div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.5rem;
+  margin-top: 25px;
+}
+.logoutContain > div:hover, .apagarContain > div:hover {
+  cursor: pointer;
+}
+.logoutContain .sim, .apagarContain .sim {
+  width: 120px;
+  padding: 15px 10px;
+  border: solid #303030 3px;
+  border-radius: 5px;
+}
+.logoutContain .nao, .apagarContain .nao {
+  width: 120px;
+  padding: 15px 10px;
+  border: solid #303030 3px;
+  border-radius: 5px;
+}
+
+.editarContain,
+.adicionarContainer {
+  background-color: rgba(17, 17, 17, 0.9);
+  width: 350px;
+  height: 350px;
+  margin: 40px auto;
+  border-radius: 15px;
+  padding: 50px;
+  color: #FFF;
+  font-size: 1.25rem;
+  text-align: center;
+  font-family: "Schibsted Grotesk", sans-serif;
+  height: auto;
+  text-align: left;
+  margin-top: 0px;
+}
+.editarContain .label-input,
+.adicionarContainer .label-input {
+  margin: 10px 0px;
+}
+.editarContain label,
+.adicionarContainer label {
+  text-align: left;
+}
+.editarContain input[type=submit],
+.adicionarContainer input[type=submit] {
+  width: 120px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #C4F120;
+  color: #111111;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-left: calc(50% - 60px);
+}
+.editarContain input[type=submit]:hover,
+.adicionarContainer input[type=submit]:hover {
+  background-color: rgb(208.6962025316, 244.0126582278, 79.9873417722);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+.editarContain input[type=submit]:active,
+.adicionarContainer input[type=submit]:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.editarContain img,
+.adicionarContainer img {
+  width: 90px;
+  height: 90px;
+}
+.editarContain .insertImage,
+.adicionarContainer .insertImage {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.editarContain .insertImage .previewImage,
+.adicionarContainer .insertImage .previewImage {
+  display: flex;
+  justify-content: center;
+}
+.editarContain .insertImage .defaultPreviewImage,
+.adicionarContainer .insertImage .defaultPreviewImage {
+  background-color: #1B1B1B;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50px;
+  margin: auto;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08), 0 2px 4px rgba(0, 0, 0, 0.06), inset 0 1px 2px rgba(255, 255, 255, 0.15);
+}
+.editarContain .insertImage .defaultPreviewImage svg,
+.adicionarContainer .insertImage .defaultPreviewImage svg {
+  transform: scale(1.35);
+}
+.editarContain .insertImage label,
+.adicionarContainer .insertImage label {
+  border: solid #303030 2.5px;
+  padding: 10px;
+  border-radius: 8px;
+  width: 150px;
+  margin: auto;
+  text-align: center;
+}
+
+.tecnologiasContainer {
+  display: flex;
+  width: 500px;
+  overflow: hidden;
+  gap: 25px;
+}
+.tecnologiasContainer .tecnologiasContent {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #1B1B1B;
+  padding: 10px;
+  border-radius: 25px;
+}
+.tecnologiasContainer .tecnologiasContent h4 {
+  color: #FFF;
+  font-size: 1.25rem;
+}
+
+.guardIcon {
+  display: flex;
+  align-items: center;
+  width: 115px;
+  justify-content: space-between;
+  padding: 10px;
+  margin: 30px 0px 0px 35px;
+}
+.guardIcon span {
+  font-size: 22px;
+  color: #FFF;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-weight: 600;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px;
+}
+.label-input label {
+  font-family: "Schibsted Grotesk", sans-serif;
+  color: #FFF;
+  font-weight: 600;
+}
+.label-input input {
+  background-color: #1B1B1B;
+  border: 1.75px solid rgba(124, 124, 124, 0.75);
+  border-radius: 8px;
+  height: 30px;
+  padding: 2px 10px;
+  margin-top: 5px;
+  caret-color: #C4F120;
+  font: 16px "Schibsted Grotesk", sans-serif;
+  color: #E2E2E2;
+}
+.label-input p.error {
+  color: #fff;
+  margin: 10px;
+  font-size: 0.75rem;
+}
+
+input.search {
+  background-color: #1B1B1B;
+  border: 1.75px solid rgba(124, 124, 124, 0.75);
+  border-radius: 8px;
+  height: 35px;
+  padding: 2px 10px;
+  margin-top: 5px;
+  caret-color: #C4F120;
+  font: 16px "Schibsted Grotesk", sans-serif;
+  color: #E2E2E2;
+}
+
+div.contato {
+  height: 75px;
+  display: flex;
+  align-items: center;
+  color: #E2E2E2;
+  justify-content: space-around;
+  font-size: 1.5rem;
+  width: 95%;
+  margin: 10px auto;
+}
+div.contato div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+div.contato div.email, div.contato div.telefone {
+  font-size: 1.25rem;
+}
+div.contato .nome-tag {
+  flex-direction: column;
+  height: 100%;
+  margin-left: 25px;
+}
+div.contato .nome-tag span.tag {
+  font-size: 1.25rem;
+}
+div.contato .telefone {
+  width: 50%;
+}
+div.contato .buttons {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+div.contato .buttons > div {
+  padding: 10px;
+}
+div.contato .buttons > div:hover {
+  cursor: pointer;
+}
+div.contato .buttons .editar {
+  border: solid #303030 3px;
+}
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background: radial-gradient(circle at center, #111111 100%, #1B1B1B 45%, #303030 10%);
+}
+
+.hero {
+  display: flex;
+  height: 100vh;
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+.hero .dir {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.hero .esq {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  height: 100%;
+}
+.hero .esq h1 {
+  font-size: 64px;
+  line-height: 64px;
+  margin-top: 25px;
+  color: #FFF;
+  letter-spacing: 2px;
+  font-weight: 500;
+}
+.hero .esq h2 {
+  color: #303030;
+}
+
+.button_home {
+  background-color: #C4F120;
+  width: 150px;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+  margin: auto;
+  margin-top: -75px;
+}
+.button_home a {
+  text-decoration: none;
+  font-size: 36px;
+  font-family: "Schibsted Grotesk", sans-serif;
+  color: #111111;
+  font-weight: 600;
+  letter-spacing: 1.25px;
+}
+.button_home:hover {
+  background-color: rgb(128.4303797468, 160.8987341772, 10.1012658228);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  transition: 0.2s;
+}
+.button_home:hover a {
+  color: rgb(208.6962025317, 244.0126582279, 79.9873417722);
+}
+.button_home:active {
+  transform: scale(0.97);
+}
+
+main.contasManager {
+  display: flex;
+  font-family: "Schibsted Grotesk", sans-serif;
+}
+main.contasManager .espaço {
+  width: 66%;
+}
+main.contasManager .quadroConta {
+  background-color: #111111;
+  min-height: 100vh;
+  width: 34%;
+}
+main.contasManager .quadroConta .contaContainer {
+  width: 66%;
+  height: 75%;
+  margin: 25% auto;
+}
+main.contasManager .quadroConta .contaContainer .contaSwapper {
+  color: #e2e2e2;
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: right;
+}
+main.contasManager .quadroConta .contaContainer .contaSwapper a {
+  text-decoration: none;
+  color: #C4F120;
+}
+main.contasManager .quadroConta .contaContainer .formConta {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30%;
+}
+main.contasManager .quadroConta .contaContainer .formConta h2 {
+  color: #E2E2E2;
+  font-size: 24px;
+  line-height: 32px;
+}
+main.contasManager .quadroConta .contaContainer .formConta input[type=submit] {
+  width: 120px;
+  height: 35px;
+  border-radius: 8px;
+  background-color: #C4F120;
+  color: #111111;
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+main.contasManager .quadroConta .contaContainer .formConta input[type=submit]:hover {
+  background-color: rgb(208.6962025316, 244.0126582278, 79.9873417722);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+main.contasManager .quadroConta .contaContainer .formConta input[type=submit]:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+main.dashboard {
+  display: flex;
+}
+
+.lateral {
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  width: 15%;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 35px;
+}
+.lateral .buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.lateral .buttons svg {
+  background-color: #303030;
+  padding: 5px;
+  border-radius: 15px;
+}
+.lateral .buttons svg:hover {
+  cursor: pointer;
+  fill: #C4F120;
+  transition: 0.25s ease-in-out;
+}
+.lateral .info {
+  margin-left: 15px;
+  color: #C6C6C6;
+  font: 14px "Schibsted Grotesk", sans-serif;
+}
+.lateral .info span {
+  font-size: 10px;
+  color: #E2E2E2;
+}
+
+.dashboard {
+  width: 100%;
+  height: 100%;
+}
+
+.dashboardContent {
+  width: 90%;
+  height: 90%;
+  margin: 35px auto;
+  background-color: #1B1B1B;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header h2 {
+  color: #FFF;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 1.5rem;
+}
+.header .headerDir {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header .headerDir .addContatos {
+  background-color: #303030;
+  padding: 10px;
+  border-radius: 10px;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-weight: 500;
+  font-size: 1.15rem;
+  color: white;
+}
+.header .headerDir .addContatos:hover {
+  cursor: pointer;
+}
+.header .headerDir svg {
+  background-color: #303030;
+  padding: 10px;
+  border-radius: 15px;
+  color: white;
+}
+.header .headerDir svg:hover {
+  cursor: pointer;
+  fill: #C4F120;
+  transform: scale(1.15);
+}
+
+.dashboardMain {
+  display: flex;
+}
+.dashboardMain .selector {
+  display: flex;
+  flex-direction: column;
+  background-color: #C4F120;
+  min-width: 35px;
+  align-items: center;
+  gap: 5px;
+  border-radius: 20px;
+  padding: 10px 0px;
+  max-height: 666px;
+  justify-content: space-evenly;
+}
+.dashboardMain .selector span {
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+}
+.dashboardMain .selector span:hover {
+  cursor: pointer;
+  transform: scale(1.5);
+  font-size: 24px;
+  transition: 0.2s;
+}
+.dashboardMain .dashboardMainContent {
+  width: 100%;
+  padding: 15px;
+}
+.dashboardMain .dashboardMainContent span.letraSelector {
+  font-size: 32px;
+  color: white;
+  font-weight: 600;
+}
+.dashboardMain .dashboardMainContent div.grid {
+  font-size: 26px;
+  margin-top: 10px;
+  display: flex;
+  color: white;
+}
+.dashboardMain .dashboardMainContent div.grid .nome {
+  width: 307px;
+  text-align: center;
+}
+.dashboardMain .dashboardMainContent div.grid .telefone {
+  text-align: center;
+  width: 154px;
+}
+.dashboardMain .dashboardMainContent div.grid .email {
+  width: 220px;
+  text-align: center;
+}
+
+/*# sourceMappingURL=output.css.map */

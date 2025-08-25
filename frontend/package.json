@@ -1,9 +1,11 @@
 {
-  "name": "gerenciador_de_projetos",
+  "name": "gerenciador_de_contatos",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
+    "next": "next dev --turbopack",
+    "sass": "sass --watch src/styles/styles.scss ./public/output.css",
+    "dev":  "npm-run-all --parallel next sass",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
