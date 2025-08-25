@@ -3,7 +3,7 @@ export default async function handleLogin(e){
     e.preventDefault()
 
     const formData = new FormData(e.target)
-    const res = await fetch("http://localhost:5000/login", {
+    const res = await fetch("https://gerenciador-de-contatos.onrender.com/login", {
       method: "POST",
       body: formData,
       credentials: "include"

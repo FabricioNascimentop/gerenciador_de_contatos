@@ -13,7 +13,7 @@ export default async function handleAdicionarContato(e, nomeOk, telefoneOk, emai
   }
 
   try {
-    const response = await fetch("http://localhost:5000/contatos/adicionar", {
+    const response = await fetch("https://gerenciador-de-contatos.onrender.com/contatos/adicionar", {
       method: "POST",
       body: formData,
       credentials: "include",

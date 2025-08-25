@@ -18,7 +18,7 @@ export function validarNome(valor) {
       return "Digite um e-mail válido.";
     }
 
-    const res = await fetch(`http://localhost:5000/api/verificar-email?email=${encodeURIComponent(valor)}`)
+    const res = await fetch(`https://gerenciador-de-contatos.onrender.com/api/verificar-email?email=${encodeURIComponent(valor)}`)
     const data = await res.json()
     
 

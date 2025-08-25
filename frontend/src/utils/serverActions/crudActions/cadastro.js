@@ -11,7 +11,7 @@ export default async function handleCadastroUsuario(e, { senhaOk, nomeOk, emailO
     if(senhaOk && nomeOk && emailOk){
       alert("conta criada com sucesso")
       window.location.href = '/dashboard'
-      const res = await fetch("http://localhost:5000/cadastrar", {
+      const res = await fetch("https://gerenciador-de-contatos.onrender.com/cadastrar", {
         method: "POST",
         body: formData
       })

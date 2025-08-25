@@ -292,8 +292,8 @@ def register_routes(app):
                 return send_file(imagem_path)
 
         # Se não encontrou nenhuma imagem, retorna a padrão
-        rootpath = Path(__file__).resolve().parent.parent
-        default_image_path = rootpath / "frontend" / "public" / "img" / "mockup_pessoa.webp"
+        rootpath = Path(__file__).resolve().parent
+        default_image_path = rootpath / "uploads" / "mockup_pessoa.webp"
         if os.path.exists(default_image_path):
             return send_file(str(default_image_path))
         else:

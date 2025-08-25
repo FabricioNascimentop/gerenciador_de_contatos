@@ -27,14 +27,14 @@ export default async function handleAtualiza(
       }
       formDataUpload.append("imagem", selectedFile);
 
-      response = await fetch("http://localhost:5000/contatos/atualizar", {
+      response = await fetch("https://gerenciador-de-contatos.onrender.com/contatos/atualizar", {
         method: "POST",
         credentials: "include",
         body: formDataUpload, // sem Content-Type manual → o browser define o boundary
       });
     } else {
       // Caso sem imagem → JSON (segue teu padrão)
-      response = await fetch("http://localhost:5000/contatos/atualizar", {
+      response = await fetch("https://gerenciador-de-contatos.onrender.com/contatos/atualizar", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

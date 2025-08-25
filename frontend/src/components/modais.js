@@ -46,7 +46,7 @@ export function ModalEditar({ onClick, pessoa }) {
   const [telefoneOk, setTelefoneOk] = useState();
 
   const [previewUrl, setPreviewUrl] = useState(
-    `http://localhost:5000/contatos/${id}/imagem`
+    `https://gerenciador-de-contatos.onrender.com/contatos/${id}/imagem`
   );
   const [selectedFile, setSelectedFile] = useState();
 

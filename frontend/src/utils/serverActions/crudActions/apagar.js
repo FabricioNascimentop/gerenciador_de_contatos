@@ -2,7 +2,7 @@ export default async function handleApagar(id) {
     if (!id) return;
 
     try {
-        const response = await fetch("http://localhost:5000/contatos/deletar", {
+        const response = await fetch("https://gerenciador-de-contatos.onrender.com/contatos/deletar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"

@@ -1,6 +1,6 @@
 export async function handleLogout() {
     try {
-        const res = await fetch("http://localhost:5000/logout", {
+        const res = await fetch("https://gerenciador-de-contatos.onrender.com/logout", {
             method: "POST",
             credentials: "include"
         });

@@ -6,15 +6,18 @@ export async function middleware(request) {
 
 
   let is_logado = false
-
+  const session = request.cookies.get("session")?.value
   try {
-    const res = await fetch("http://localhost:5000/isLogado", {
+    const res = await fetch("https://gerenciador-de-contatos.onrender.com/isLogado", {
       headers: {
         Cookie: `session=${cookie}`
-      }
+      },
+      credentials: "include",
+      method: "GET",
     })
     if (res.ok) {
       const data = await res.json()
+      console.log(data)
       is_logado = data.logged_in === true
     }
   } catch (err) {
