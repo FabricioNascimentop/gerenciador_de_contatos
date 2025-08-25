@@ -20,7 +20,7 @@ export function InputNome({name, setNomeOk, defaultValue}){
         else{
             setNomeOk(false)
         }
-    },[nome])
+    },[nome, setNomeOk, erro])
 
     return(
         <div className='label-input nome'>
@@ -140,7 +140,7 @@ export function InputSenhaComConfirmacao({name, setSenhaOk}){
         } else {
             setErroConfirma("❌ As senhas não conferem");
         }
-    }, [senha, confirmaSenha]);
+    }, [senha, confirmaSenha, erros, setSenhaOk]);
 
     return(
         <>
@@ -154,7 +154,7 @@ export function InputSenhaComConfirmacao({name, setSenhaOk}){
             required
             autoComplete="new-password"
             name={name}
-            aria-autocomplete=""
+            aria-autocomplete="none"
         />
         {erros.length > 0 &&
             erros.map((erro, i) => (
@@ -173,7 +173,7 @@ export function InputSenhaComConfirmacao({name, setSenhaOk}){
             required
             autoComplete="new-password"
             name={`${name}_confirma`}
-            aria-autocomplete=""
+            aria-autocomplete="none"
             />
             {erroConfirma && (<p className="error">{erroConfirma}</p>)}
         </div>

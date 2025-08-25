@@ -161,7 +161,6 @@ def register_routes(app):
             if ext not in allowed:
                 return jsonify({"success": False, "message": "Extensão de imagem não suportada"}), 400
 
-            # remove qualquer arquivo anterior deste contato (qualquer extensão suportada)
             base_name = f"profile_pic_{contato_id}"
             for e in allowed:
                 old_path = user_folder / f"{base_name}{e}"
@@ -171,7 +170,6 @@ def register_routes(app):
                     except Exception as ex:
                         print("Erro ao remover imagem antiga:", ex)
 
-        # salva a nova imagem com nome padronizado (compatível com sua rota de GET)
         new_path = user_folder / f"{base_name}{ext}"
         imagem.save(str(new_path))
 

@@ -14,6 +14,8 @@ export default function Home(){
     const [editar, setEditar] = useState(false)
     const [adicionar, setAdicionar] = useState(false)
     const [apagar, setApagar] = useState(false)
+    const [easterEgg, setEasterEgg] = useState(false)
+
 
     const [dados, setDados] = useState([])
     const [letra, setLetra] = useState("#")
@@ -34,7 +36,16 @@ export default function Home(){
     }, [letra])
 
 
-    
+    function handleHover() {
+        setTimeout(() => {
+        setEasterEgg(true);
+
+            setTimeout(() => {
+            setEasterEgg(false);
+            }, 3000);
+
+        }, 7000);
+    }
 
     return(
         <main className="dashboard">
@@ -59,7 +70,7 @@ export default function Home(){
                         <h2>Lista de Contatos</h2>
                         <div className="headerDir">
                             <InputPesquisa/>
-                            <div className="addContatos" onClick={() => {setAdicionar(true)}}>+ Adicionar contato</div>
+                            <div className="addContatos" onClick={() => {setAdicionar(true)}} onMouseOver={handleHover}>+ Adicionar contato</div>
                             <Cadeadinho/>
                         </div>
                     </div>
@@ -105,6 +116,9 @@ export default function Home(){
             )}
             {apagar && (
                 <ModalApagar onClick={() => {setApagar(false)}} pessoa={apagar}/>
+            )}
+            {easterEgg && (
+                <div className="egg">“Tá esperando o quê? Boraa moeer!! 🚀”</div>
             )}
         </main>
     )

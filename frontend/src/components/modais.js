@@ -5,6 +5,8 @@ import { useState } from "react"
 import handleAdicionarContato from "@/utils/serverActions/crudActions/adicionarContato"
 import handleApagar from "@/utils/serverActions/crudActions/apagar"
 import { UserIcon } from "./icons"
+import Image from "next/image"
+
 
 export function ModalConfig({onClick}){
     return(
@@ -71,7 +73,7 @@ export function ModalEditar({ onClick, pessoa }) {
           <div className="insertImage">
             <div className="previewImage">
               {previewUrl ? (
-                <img src={previewUrl} alt="Preview" />
+                <Image src={previewUrl} width={50} height={50} alt="Preview" />
               ) : (
                 <div className="defaultPreviewImage">
                   <UserIcon color="#5E5E5E" />
@@ -163,7 +165,7 @@ export function ModalAdicionar({ onClick }) {
 
                     <div className="insertImage">
                         <div className="previewImage">
-                            {previewUrl ? <img src={previewUrl} alt="Preview" /> : (
+                            {previewUrl ? <Image src={previewUrl} width={50} height={50} alt="Preview" /> : (
                                 <div className="defaultPreviewImage">
                                     <UserIcon color="#5E5E5E"/>
                                 </div>

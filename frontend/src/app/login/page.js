@@ -1,16 +1,10 @@
 "use client";
 
 import handlelogin from '@/utils/serverActions/login';
-import { useSearchParams } from 'next/navigation'
-import { useState } from 'react';
 import { GuardIcon } from '../../components/icons';
 
 
 export default function Login(){
-
-    const searchParams = useSearchParams()
-    const redirecionado = searchParams.get('redirecionado')
-    
 
     return(
         <main className='contasManager'>
