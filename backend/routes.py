@@ -1,10 +1,10 @@
-from flask import request, jsonify, session, abort, send_file
+from flask import request, jsonify, session, abort, send_file, make_response
 from models import db, Usuario, Contatos
 from helper import validar_nome, validar_email, validar_senha
 from sqlalchemy import func
 from werkzeug.utils import secure_filename
 from pathlib import Path
-
+import os, secrets 
 def register_routes(app):
 
     @app.route("/cadastrar", methods=["POST"])
@@ -47,9 +47,30 @@ def register_routes(app):
         usuario = Usuario.query.filter_by(email=email).first()
 
         if usuario and usuario.check_password(senha):
+            session_value = secrets.token_hex(32)
+
+            # Salve session_value no banco para validar depois, se quiser
+            # Ex: usuario.session_token = session_value; db.session.commit()
+
+            response = make_response(jsonify({
+                "success": True,
+                "message": "Login realizado",
+            }), 200)
+
+            response.set_cookie(
+                "session",
+                session_value,
+                httponly=True,
+                secure=False,      # localhost; em produção: True
+                samesite="Lax",    # localhost; produção: Strict
+                max_age=60*60*24,
+                path="/"
+            )
+
             session["user_id"] = usuario.id
             session["user_email"] = usuario.email
-            return jsonify({"success": True, "message": "Login realizado com sucesso", "token": "test-jwt-123456"}), 200
+
+            return response
         else:
             return jsonify({"success": False, "message": "Email ou senha incorretos"}), 401
 
@@ -221,7 +242,6 @@ def register_routes(app):
             db.session.flush() 
 
             if imagem:
-                import os
                 ext = os.path.splitext(imagem.filename)[1].lower() 
                 filename = secure_filename(f"profile_pic_{novo_contato.id}{ext}")
 
@@ -268,7 +288,6 @@ def register_routes(app):
     
     @app.route("/contatos/<int:contato_id>/imagem")
     def contato_imagem(contato_id):
-        import os
         from pathlib import Path
         from flask import send_file, abort, session
 
