@@ -47,33 +47,20 @@ def register_routes(app):
         usuario = Usuario.query.filter_by(email=email).first()
 
         if usuario and usuario.check_password(senha):
-            session_value = secrets.token_hex(32)
-
-            # Salve session_value no banco para validar depois, se quiser
-            # Ex: usuario.session_token = session_value; db.session.commit()
-
-            response = make_response(jsonify({
-                "success": True,
-                "message": "Login realizado",
-            }), 200)
-
-            response.set_cookie(
-                "session",
-                session_value,
-                httponly=True,
-                secure=False,      # localhost; em produção: True
-                samesite="Lax",    # localhost; produção: Strict
-                max_age=60*60*24,
-                path="/"
-            )
-
-
             session["user_id"] = usuario.id
             session["user_email"] = usuario.email
 
-            return response
+            return jsonify({
+                "success": True,
+                "message": "Login realizado"
+            }), 200
+        
         else:
-            return jsonify({"success": False, "message": "Email ou senha incorretos"}), 401
+            return jsonify({
+                "success": False,
+                "message": "Email ou senha incorretos"
+            }), 401
+
 
 
     @app.route("/api/verificar-email")

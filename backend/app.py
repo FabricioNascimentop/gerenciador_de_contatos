@@ -8,7 +8,7 @@ import os
 load_dotenv()
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}}, supports_credentials=True)
+CORS(app, supports_credentials=True, origins="https://gerenciador-de-contatos-lovat.vercel.app")
 
 db_user = os.getenv("user")
 db_password = os.getenv("password")
@@ -23,7 +23,11 @@ app.config['SQLALCHEMY_DATABASE_URI'] = (
 
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+app.config.update(
+    SESSION_COOKIE_HTTPONLY=True,
+    SESSION_COOKIE_SECURE=True,     
+    SESSION_COOKIE_SAMESITE='None' 
+)
 app.secret_key = seckey
 db.init_app(app)
 
