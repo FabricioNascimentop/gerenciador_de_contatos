@@ -73,6 +73,7 @@ def register_routes(app):
     @app.route("/isLogado")
     def isLogado():
         if "user_id" in session:
+            print('usuário logado com sucesso')
             return jsonify({
             "logged_in": True,
             "user_email": session["user_email"]
